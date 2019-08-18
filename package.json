@@ -80,5 +80,8 @@
     "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.15.0",
     "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@iwburns/tupperware": "^1.1.0"
   }
 }
