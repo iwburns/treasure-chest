@@ -6,12 +6,11 @@ export interface Config<Input, Output> {
 }
 
 export interface KeyValuePair<Output> {
-  key: string,
-  value: Output,
+  key: string;
+  value: Output;
 }
 
 export class Cache<Input, Output> {
-
   private data: Map<string, Output>;
   private config: Config<Input, Output>;
 
@@ -44,10 +43,12 @@ export class Cache<Input, Output> {
     this.data.set(key, value);
   }
 
-  setMany(keyValuePairs: Array<KeyValuePair<Output>>) {
-    keyValuePairs.forEach(({ key, value }) => {
-      this.set(key, value);
-    })
+  delete(key: string) {
+    this.data.delete(key);
+  }
+
+  clear() {
+    this.data = new Map();
   }
 }
 
