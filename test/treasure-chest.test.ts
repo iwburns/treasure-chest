@@ -13,13 +13,13 @@ describe('Cache', () => {
 
     expect(cache.get(1)).toEqual(10);
 
-    cache.set('2', 12); // clearly wrong
+    cache.set(2, 12); // clearly wrong
     expect(cache.get(2)).toEqual(12); // garbage in, garbage out
 
-    cache.set('3', 13); // clearly wrong
+    cache.set(3, 13); // clearly wrong
     expect(cache.get(3)).toEqual(13); // garbage in, garbage out
 
-    cache.delete('2');
+    cache.delete(2);
     expect(cache.get(2)).toEqual(20);
 
     cache.clear();
@@ -46,13 +46,13 @@ describe('Cache', () => {
 
     expect(await cache.get(1)).toEqual(10);
 
-    cache.set('2', Promise.resolve(12)); // clearly wrong
+    cache.set(2, Promise.resolve(12)); // clearly wrong
     expect(await cache.get(2)).toEqual(12); // garbage in, garbage out
 
-    cache.set('3', Promise.resolve(13)); // clearly wrong
+    cache.set(3, Promise.resolve(13)); // clearly wrong
     expect(await cache.get(3)).toEqual(13); // garbage in, garbage out
 
-    cache.delete('2');
+    cache.delete(2);
     expect(await cache.get(2)).toEqual(20);
 
     cache.clear();
