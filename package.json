@@ -1,7 +1,7 @@
 {
-  "name": "treasure-chest",
+  "name": "@iwburns/treasure-chest",
   "version": "0.1.0",
-  "description": "",
+  "description": "Create caches easily.",
   "keywords": [],
   "main": "dist/treasure-chest.umd.js",
   "module": "dist/treasure-chest.es5.js",
@@ -12,8 +12,12 @@
   "author": "Ian Burns <iwburns8@gmail.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/iwburns/treasure-chest.git"
   },
+  "bugs": {
+    "url": "https://github.com/iwburns/treasure-chest/issues"
+  },
+  "homepage": "https://github.com/iwburns/treasure-chest#readme",
   "license": "MIT",
   "engines": {
     "node": ">=6.0.0"
