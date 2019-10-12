@@ -146,16 +146,17 @@ export class Cache<Input, Output> {
    *   },
    * });
    *
-   * cache.set('1', 100);
+   * cache.set(1, 100);
    * const one = cache.get(1); // cached but importantly: incorrect
    * // one === 100
    * ```
    *
-   * @param key The key in the cache where the new value will be set.
-   * @param value The value that that the new key should point to.
+   * @param input The input value that should point to the new output value.
+   * @param output The output value that that the new input value should point to.
    */
-  set(key: string, value: Output): void {
-    this.data.set(key, value);
+  set(input: Input, output: Output): void {
+    const key = this.config.computeKey(input);
+    this.data.set(key, output);
   }
 
   /**
@@ -174,15 +175,16 @@ export class Cache<Input, Output> {
    * });
    *
    * const one = cache.get(1); // computed
-   * cache.delete('1');
+   * cache.delete(1);
    * const oneAgain = cache.get(1); // computed again
    * // one === 10
    * // oneAgain === 10
    * ```
    *
-   * @param key The key to be deleted.
+   * @param input The input value to removed from the cache.
    */
-  delete(key: string): void {
+  delete(input: Input): void {
+    const key = this.config.computeKey(input);
     this.data.delete(key);
   }
 
